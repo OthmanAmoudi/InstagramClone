@@ -18,16 +18,31 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var signInBtn: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        signInBtn.isEnabled=false
+        
+        emailTextField.text="red@fan.com"
+        passwordTextField.text="123456"
+        
         handleTextFields()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if FIRAuth.auth()?.currentUser != nil{
+                self.performSegue(withIdentifier: "ToHomeTabBarSegue", sender: nil)
+        }
     }
 
 
     @IBAction func signInBtn_didClick(_ sender: Any) {
         FIRAuth.auth()?.signIn(withEmail: emailTextField.text!, password: passwordTextField.text!, completion: {(user, error) in
             if error != nil{
+                let alert = UIAlertController(title: "Error", message: "\(error!.localizedDescription)", preferredStyle: UIAlertControllerStyle.alert)
+                let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil)
+                alert.addAction(cancelAction)
+                
                 print(error!.localizedDescription)
+                
+                self.present(alert, animated: true, completion: nil)
                 return
             }
             self.performSegue(withIdentifier: "ToHomeTabBarSegue", sender: nil)

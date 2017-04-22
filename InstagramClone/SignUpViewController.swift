@@ -61,7 +61,12 @@ class SignUpViewController: UIViewController {
     @IBAction func signUpBtn_Touchupinside(_ sender: Any) {
         FIRAuth.auth()?.createUser(withEmail: emailTextField.text!,password: passwordTextField.text!, completion: {(user: FIRUser?, error: Error?)in
             if error != nil {
+                
+                let alert = UIAlertController(title: "Error", message: "\(error!.localizedDescription)", preferredStyle: UIAlertControllerStyle.alert)
+                let cancelAction = UIAlertAction(title: "Try Again", style: UIAlertActionStyle.cancel, handler: nil)
+                alert.addAction(cancelAction)
                 print(error!.localizedDescription)
+                self.present(alert, animated: true, completion: nil)
                 return
             }
             let uid = user?.uid

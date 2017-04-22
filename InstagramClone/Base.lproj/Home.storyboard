@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Home-->
+        <!--Home View Controller-->
         <scene sceneID="SWQ-6K-QVI">
             <objects>
                 <viewController id="AAf-ox-PI6" customClass="HomeViewController" customModule="InstagramClone" customModuleProvider="target" sceneMemberID="viewController">
@@ -22,7 +22,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Home" id="qGP-mn-WCL"/>
+                    <navigationItem key="navigationItem" id="qGP-mn-WCL">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="fyl-Vl-KhZ">
+                            <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="0.49507705479452052" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="logoutBtn_didClick:" destination="AAf-ox-PI6" id="g2K-6s-DEG"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="ZEc-OP-9Gc">
+                            <color key="tintColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="logoutBtn" destination="fyl-Vl-KhZ" id="PFZ-PG-pvG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ekx-FX-wkx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

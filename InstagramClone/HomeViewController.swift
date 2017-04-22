@@ -7,11 +7,13 @@
 //
 
 import UIKit
-
+import FirebaseAuth
 class HomeViewController: UIViewController {
 
+    @IBOutlet weak var logoutBtn: UIBarButtonItem!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
 
         // Do any additional setup after loading the view.
@@ -23,23 +25,25 @@ class HomeViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        let nav = self.navigationController?.navigationBar
-        nav?.tintColor = UIColor.yellow
-        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+      
+        let imageView = UIImageView(frame: CGRect(x: 40, y: 40, width: 40, height: 40))
         imageView.contentMode = .scaleAspectFit
-        let image = UIImage(named: "Instagram_logo")
-        imageView.image = image
+        let logo = UIImage(named: "Instagram_logo")
+        imageView.image = logo
         navigationItem.titleView = imageView
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func logoutBtn_didClick(_ sender: Any) {
+        print(FIRAuth.auth()?.currentUser as Any)
+        do{
+        try FIRAuth.auth()?.signOut()
+        } catch let logoutError{
+            print(logoutError)
+        }
+        print(FIRAuth.auth()?.currentUser as Any)
+        dismiss(animated: true, completion: nil)
     }
-    */
+    
+
 
 }
