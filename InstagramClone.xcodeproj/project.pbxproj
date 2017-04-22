@@ -8,16 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		49575AC81EA74B6100BD0C0C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49575AC71EA74B6100BD0C0C /* AppDelegate.swift */; };
-		49575ACA1EA74B6100BD0C0C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49575AC91EA74B6100BD0C0C /* ViewController.swift */; };
 		49575ACD1EA74B6100BD0C0C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49575ACB1EA74B6100BD0C0C /* Main.storyboard */; };
 		49575ACF1EA74B6100BD0C0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49575ACE1EA74B6100BD0C0C /* Assets.xcassets */; };
 		49575AD21EA74B6100BD0C0C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49575AD01EA74B6100BD0C0C /* LaunchScreen.storyboard */; };
-		49575ADA1EA74E5800BD0C0C /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49575AD91EA74E5800BD0C0C /* SignInViewController.swift */; };
+		49575ADA1EA74E5800BD0C0C /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49575AD91EA74E5800BD0C0C /* SignUpViewController.swift */; };
 		49575ADC1EA760E800BD0C0C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49575ADB1EA760E800BD0C0C /* HomeViewController.swift */; };
 		49575ADE1EA760F200BD0C0C /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49575ADD1EA760F200BD0C0C /* SearchViewController.swift */; };
 		49575AE01EA7610300BD0C0C /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49575ADF1EA7610300BD0C0C /* ActivityViewController.swift */; };
 		49575AE21EA7610F00BD0C0C /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49575AE11EA7610F00BD0C0C /* PhotoViewController.swift */; };
 		49575AE41EA7611A00BD0C0C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49575AE31EA7611A00BD0C0C /* ProfileViewController.swift */; };
+		4974AE841EAB77D80095720B /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4974AE831EAB77D80095720B /* SignInViewController.swift */; };
 		498162721EA8C71500CDAFC2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 498162711EA8C71500CDAFC2 /* GoogleService-Info.plist */; };
 		49D2B6BC1EA793B000541569 /* Insideapp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49D2B6BA1EA793B000541569 /* Insideapp.storyboard */; };
 		49D2B6BF1EA7CF4800541569 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49D2B6BD1EA7CF4800541569 /* Home.storyboard */; };
@@ -31,17 +31,17 @@
 /* Begin PBXFileReference section */
 		49575AC41EA74B6100BD0C0C /* InstagramClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstagramClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49575AC71EA74B6100BD0C0C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		49575AC91EA74B6100BD0C0C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		49575ACC1EA74B6100BD0C0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		49575ACE1EA74B6100BD0C0C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		49575AD11EA74B6100BD0C0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		49575AD31EA74B6100BD0C0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		49575AD91EA74E5800BD0C0C /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		49575AD91EA74E5800BD0C0C /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		49575ADB1EA760E800BD0C0C /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		49575ADD1EA760F200BD0C0C /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		49575ADF1EA7610300BD0C0C /* ActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 		49575AE11EA7610F00BD0C0C /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		49575AE31EA7611A00BD0C0C /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		4974AE831EAB77D80095720B /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		498162711EA8C71500CDAFC2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		49D2B6BB1EA793B000541569 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Insideapp.storyboard; sourceTree = "<group>"; };
 		49D2B6BE1EA7CF4800541569 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
@@ -98,9 +98,9 @@
 			children = (
 				49575AC71EA74B6100BD0C0C /* AppDelegate.swift */,
 				49D2B6BA1EA793B000541569 /* Insideapp.storyboard */,
-				49575AC91EA74B6100BD0C0C /* ViewController.swift */,
 				49575ACB1EA74B6100BD0C0C /* Main.storyboard */,
-				49575AD91EA74E5800BD0C0C /* SignInViewController.swift */,
+				4974AE831EAB77D80095720B /* SignInViewController.swift */,
+				49575AD91EA74E5800BD0C0C /* SignUpViewController.swift */,
 				49D2B6BD1EA7CF4800541569 /* Home.storyboard */,
 				49575ADB1EA760E800BD0C0C /* HomeViewController.swift */,
 				49D2B6C71EA7D10100541569 /* Profile.storyboard */,
@@ -260,10 +260,10 @@
 			files = (
 				49575ADE1EA760F200BD0C0C /* SearchViewController.swift in Sources */,
 				49575AE01EA7610300BD0C0C /* ActivityViewController.swift in Sources */,
-				49575ACA1EA74B6100BD0C0C /* ViewController.swift in Sources */,
 				49575AC81EA74B6100BD0C0C /* AppDelegate.swift in Sources */,
 				49575AE21EA7610F00BD0C0C /* PhotoViewController.swift in Sources */,
-				49575ADA1EA74E5800BD0C0C /* SignInViewController.swift in Sources */,
+				49575ADA1EA74E5800BD0C0C /* SignUpViewController.swift in Sources */,
+				4974AE841EAB77D80095720B /* SignInViewController.swift in Sources */,
 				49575AE41EA7611A00BD0C0C /* ProfileViewController.swift in Sources */,
 				49575ADC1EA760E800BD0C0C /* HomeViewController.swift in Sources */,
 			);

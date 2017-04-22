@@ -90,7 +90,7 @@
                                     <color key="titleColor" red="0.99852031818666331" green="1" blue="0.93472142333344865" alpha="0.62470569349315064" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="2Ia-OU-PVc" kind="presentation" id="I2y-Oy-pNs"/>
+                                    <action selector="signInBtn_didClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Z61-GO-1zK"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -117,15 +117,21 @@
                             <constraint firstItem="Ax2-M1-brI" firstAttribute="top" secondItem="CrF-iI-Rec" secondAttribute="bottom" constant="8" symbolic="YES" id="zNF-De-kNg"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="CrF-iI-Rec" id="trN-WJ-4sD"/>
+                        <outlet property="passwordTextField" destination="Ax2-M1-brI" id="qeb-Bw-TOP"/>
+                        <outlet property="signInBtn" destination="C4g-vo-vAM" id="RCX-Df-wTw"/>
+                        <segue destination="2Ia-OU-PVc" kind="presentation" identifier="ToHomeTabBarSegue" id="Wxl-1Z-zlT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-36" y="132.68365817091455"/>
         </scene>
-        <!--Sign In View Controller-->
+        <!--Sign Up View Controller-->
         <scene sceneID="iud-vc-ZA8">
             <objects>
-                <viewController id="hAY-UN-aNk" customClass="SignInViewController" customModule="InstagramClone" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="hAY-UN-aNk" customClass="SignUpViewController" customModule="InstagramClone" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bXB-1K-2jo"/>
                         <viewControllerLayoutGuide type="bottom" id="Vlm-rF-js8"/>
@@ -176,7 +182,6 @@
                                 </state>
                                 <connections>
                                     <action selector="signUpBtn_Touchupinside:" destination="hAY-UN-aNk" eventType="touchUpInside" id="LmB-8v-n0S"/>
-                                    <segue destination="2Ia-OU-PVc" kind="presentation" id="oWZ-li-XvL"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8oW-dq-wYF">
@@ -222,12 +227,14 @@
                         <outlet property="emailTextField" destination="Qtt-rH-jcB" id="Q2A-fT-Wbz"/>
                         <outlet property="passwordTextField" destination="zb3-4H-hh5" id="MHo-TB-2Ub"/>
                         <outlet property="profilePictureContainer" destination="duy-Qo-GV0" id="laV-z2-SmS"/>
+                        <outlet property="signUpBtn" destination="OE6-b6-ruP" id="tsr-2V-1oc"/>
                         <outlet property="usernameTextField" destination="Jfu-tZ-rCq" id="K1M-bg-Omr"/>
+                        <segue destination="2Ia-OU-PVc" kind="presentation" identifier="SignUpToHomeTabBarSegue" id="bnX-TB-BQN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KnU-8c-J4v" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="756" y="542.87856071964018"/>
+            <point key="canvasLocation" x="841" y="133"/>
         </scene>
         <!--TabBarId-->
         <scene sceneID="zSF-7a-aHK">
@@ -235,7 +242,7 @@
                 <viewControllerPlaceholder storyboardName="Insideapp" referencedIdentifier="TabBarId" id="2Ia-OU-PVc" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HOL-hq-tON" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1535" y="133"/>
+            <point key="canvasLocation" x="443" y="631"/>
         </scene>
     </scenes>
     <resources>
@@ -243,6 +250,6 @@
         <image name="white_instagram_text_logo1" width="1785" height="612"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="oWZ-li-XvL"/>
+        <segue reference="bnX-TB-BQN"/>
     </inferredMetricsTieBreakers>
 </document>
