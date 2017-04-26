@@ -11,8 +11,8 @@ import Firebase
 import FirebaseAuth
 import FirebaseStorage
 class SignUpViewController: UIViewController {
-
-
+    
+    
     @IBOutlet weak var signUpBtn: UIButton!
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
@@ -20,19 +20,23 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var profilePictureContainer: UIImageView!
     
     var selectedProfilePicture: UIImage?
-   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-      
-        profilePictureContainer?.layer.cornerRadius = 50
-       // profilePictureContainer?.layer.masksToBounds = true
-        profilePictureContainer?.clipsToBounds = true
+        
+        
+        profilePictureContainer.layer.cornerRadius = profilePictureContainer.frame.size.width / 2
+        profilePictureContainer.clipsToBounds = true
+        
         let tap = UITapGestureRecognizer(target: self, action: #selector(SignUpViewController.handleImageChosen) )
         profilePictureContainer?.addGestureRecognizer(tap)
         profilePictureContainer?.isUserInteractionEnabled = true
         signUpBtn?.isEnabled=false
         handleTextFields()
-
+        
+    }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
     }
     
     func handleTextFields(){
@@ -57,40 +61,30 @@ class SignUpViewController: UIViewController {
         picker.delegate = self
         present(picker, animated: true, completion: nil)
     }
-
+    
     @IBAction func signUpBtn_Touchupinside(_ sender: Any) {
-        FIRAuth.auth()?.createUser(withEmail: emailTextField.text!,password: passwordTextField.text!, completion: {(user: FIRUser?, error: Error?)in
-            if error != nil {
-                
-                let alert = UIAlertController(title: "Error", message: "\(error!.localizedDescription)", preferredStyle: UIAlertControllerStyle.alert)
+        view.endEditing(true)
+        ProgressHUD.show("Waiting...", interaction: false)
+        if let userPhotoimg =  self.selectedProfilePicture, let imageData = UIImageJPEGRepresentation(userPhotoimg, 0.1){
+            AuthServices.signUp(username: usernameTextField.text!, email: emailTextField.text!, password: passwordTextField.text!, imageData: imageData, onSuccess: {
+                ProgressHUD.dismiss()
+                self.performSegue(withIdentifier: "SignUpToHomeTabBarSegue", sender: nil)
+                ProgressHUD.showSuccess("Account Created")
+            }, onError: { (errorSring) in
+                print(errorSring!)
+                ProgressHUD.dismiss()
+                let alert = UIAlertController(title: "Error", message: "\(errorSring!)", preferredStyle: UIAlertControllerStyle.alert)
                 let cancelAction = UIAlertAction(title: "Try Again", style: UIAlertActionStyle.cancel, handler: nil)
                 alert.addAction(cancelAction)
-                print(error!.localizedDescription)
                 self.present(alert, animated: true, completion: nil)
-                return
-            }
-            let uid = user?.uid
-            let storageRef = FIRStorage.storage().reference(forURL: "gs://instagramclone-e03f1.appspot.com/").child("profile_image").child(uid!)
-            if let userPhotoimg =  self.selectedProfilePicture, let imageData = UIImageJPEGRepresentation(userPhotoimg, 0.1){
-                storageRef.put(imageData, metadata: nil, completion: {(metadata, error) in
-                 
-                    if error != nil{
-                        return
-                    }
-                    
-                    let profileImgUrl = metadata?.downloadURL()?.absoluteString
-                    let ref = FIRDatabase.database().reference()
-                    let userReference = ref.child("users")
-                    let newUserReference = userReference.child(uid!)
-                    newUserReference.setValue(["username": self.usernameTextField.text!, "email": self.emailTextField.text!, "Profile Picture":profileImgUrl])
-                    self.performSegue(withIdentifier: "SignUpToHomeTabBarSegue", sender: nil)
-                })
-            }
-           
-     
-        })
-        
+            })
+        } else{
+            ProgressHUD.showError("Please select a Photo")
+            print("Photos cant be empty")
+        }
+
     }
+    
     @IBAction func dissmiss_OnClick(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
@@ -99,21 +93,22 @@ class SignUpViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-
+    
+    
 }
 
 extension SignUpViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]){
+        
         print("did finish picking")
         if let image = info["UIImagePickerControllerOriginalImage"] as? UIImage{
             profilePictureContainer.image = image
             selectedProfilePicture = image
-
+            
         }
         
         print(info)
-      //  profilePictureContainer.image = infoPhoto
+        //  profilePictureContainer.image = infoPhoto
         dismiss(animated: true, completion: nil)
     }
     

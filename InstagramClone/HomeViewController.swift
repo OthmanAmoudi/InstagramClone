@@ -34,16 +34,27 @@ class HomeViewController: UIViewController {
     }
 
     @IBAction func logoutBtn_didClick(_ sender: Any) {
-        print(FIRAuth.auth()?.currentUser as Any)
-        do{
-        try FIRAuth.auth()?.signOut()
-        } catch let logoutError{
-            print(logoutError)
+       let alert = UIAlertController(title: "Confirm", message: "are you sure you want to Log out ?", preferredStyle: UIAlertControllerStyle.actionSheet)
+        let cancel = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil)
+        let logout = UIAlertAction(title: "Logout", style: UIAlertActionStyle.default) { (UIAlertAction) in
+            print(FIRAuth.auth()?.currentUser as Any)
+            do{
+                ProgressHUD.show("logging out...", interaction: false)
+                try FIRAuth.auth()?.signOut()
+            } catch let logoutError{
+                print(logoutError)
+            }
+            ProgressHUD.dismiss()
+            print(FIRAuth.auth()?.currentUser as Any)
+            self.dismiss(animated: true, completion: nil)
         }
-        print(FIRAuth.auth()?.currentUser as Any)
-        dismiss(animated: true, completion: nil)
+        alert.addAction(cancel)
+        alert.addAction(logout)
+        self.present(alert, animated: true, completion: nil)
+
     }
     
+
 
 
 }

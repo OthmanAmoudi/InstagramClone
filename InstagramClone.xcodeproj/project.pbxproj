@@ -19,6 +19,10 @@
 		49575AE41EA7611A00BD0C0C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49575AE31EA7611A00BD0C0C /* ProfileViewController.swift */; };
 		4974AE841EAB77D80095720B /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4974AE831EAB77D80095720B /* SignInViewController.swift */; };
 		498162721EA8C71500CDAFC2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 498162711EA8C71500CDAFC2 /* GoogleService-Info.plist */; };
+		49896C631EAF93D900DC7950 /* ProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 49896C601EAF93D900DC7950 /* ProgressHUD.bundle */; };
+		49896C641EAF93D900DC7950 /* ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 49896C621EAF93D900DC7950 /* ProgressHUD.m */; };
+		49896C661EAFCE5400DC7950 /* AuthServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49896C651EAFCE5400DC7950 /* AuthServices.swift */; };
+		49896C681EB0A24F00DC7950 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49896C671EB0A24F00DC7950 /* Config.swift */; };
 		49D2B6BC1EA793B000541569 /* Insideapp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49D2B6BA1EA793B000541569 /* Insideapp.storyboard */; };
 		49D2B6BF1EA7CF4800541569 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49D2B6BD1EA7CF4800541569 /* Home.storyboard */; };
 		49D2B6C11EA7D02700541569 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49D2B6C01EA7D02700541569 /* Search.storyboard */; };
@@ -43,6 +47,12 @@
 		49575AE31EA7611A00BD0C0C /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		4974AE831EAB77D80095720B /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		498162711EA8C71500CDAFC2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		49896C5F1EAF93D900DC7950 /* InstagramClone-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "InstagramClone-Bridging-Header.h"; sourceTree = "<group>"; };
+		49896C601EAF93D900DC7950 /* ProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ProgressHUD.bundle; sourceTree = "<group>"; };
+		49896C611EAF93D900DC7950 /* ProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressHUD.h; sourceTree = "<group>"; };
+		49896C621EAF93D900DC7950 /* ProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressHUD.m; sourceTree = "<group>"; };
+		49896C651EAFCE5400DC7950 /* AuthServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthServices.swift; sourceTree = "<group>"; };
+		49896C671EB0A24F00DC7950 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		49D2B6BB1EA793B000541569 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Insideapp.storyboard; sourceTree = "<group>"; };
 		49D2B6BE1EA7CF4800541569 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
 		49D2B6C01EA7D02700541569 /* Search.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
@@ -97,6 +107,8 @@
 			isa = PBXGroup;
 			children = (
 				49575AC71EA74B6100BD0C0C /* AppDelegate.swift */,
+				49896C651EAFCE5400DC7950 /* AuthServices.swift */,
+				49896C671EB0A24F00DC7950 /* Config.swift */,
 				49D2B6BA1EA793B000541569 /* Insideapp.storyboard */,
 				49575ACB1EA74B6100BD0C0C /* Main.storyboard */,
 				4974AE831EAB77D80095720B /* SignInViewController.swift */,
@@ -113,8 +125,12 @@
 				49575ADD1EA760F200BD0C0C /* SearchViewController.swift */,
 				49575ACE1EA74B6100BD0C0C /* Assets.xcassets */,
 				49575AD01EA74B6100BD0C0C /* LaunchScreen.storyboard */,
+				49896C601EAF93D900DC7950 /* ProgressHUD.bundle */,
+				49896C611EAF93D900DC7950 /* ProgressHUD.h */,
+				49896C621EAF93D900DC7950 /* ProgressHUD.m */,
 				498162711EA8C71500CDAFC2 /* GoogleService-Info.plist */,
 				49575AD31EA74B6100BD0C0C /* Info.plist */,
+				49896C5F1EAF93D900DC7950 /* InstagramClone-Bridging-Header.h */,
 			);
 			path = InstagramClone;
 			sourceTree = "<group>";
@@ -163,6 +179,7 @@
 					49575AC31EA74B6100BD0C0C = {
 						CreatedOnToolsVersion = 8.3.1;
 						DevelopmentTeam = KB93Y7F453;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -190,6 +207,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49896C631EAF93D900DC7950 /* ProgressHUD.bundle in Resources */,
 				49D2B6BC1EA793B000541569 /* Insideapp.storyboard in Resources */,
 				49D2B6BF1EA7CF4800541569 /* Home.storyboard in Resources */,
 				49575AD21EA74B6100BD0C0C /* LaunchScreen.storyboard in Resources */,
@@ -248,7 +266,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -258,10 +276,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49896C641EAF93D900DC7950 /* ProgressHUD.m in Sources */,
 				49575ADE1EA760F200BD0C0C /* SearchViewController.swift in Sources */,
 				49575AE01EA7610300BD0C0C /* ActivityViewController.swift in Sources */,
 				49575AC81EA74B6100BD0C0C /* AppDelegate.swift in Sources */,
+				49896C681EB0A24F00DC7950 /* Config.swift in Sources */,
 				49575AE21EA7610F00BD0C0C /* PhotoViewController.swift in Sources */,
+				49896C661EAFCE5400DC7950 /* AuthServices.swift in Sources */,
 				49575ADA1EA74E5800BD0C0C /* SignUpViewController.swift in Sources */,
 				4974AE841EAB77D80095720B /* SignInViewController.swift in Sources */,
 				49575AE41EA7611A00BD0C0C /* ProfileViewController.swift in Sources */,
@@ -421,12 +442,15 @@
 			baseConfigurationReference = D6DEBFA8F53B03525D4E45E0 /* Pods-InstagramClone.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = KB93Y7F453;
 				INFOPLIST_FILE = InstagramClone/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MACH_O_TYPE = mh_execute;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Othman.InstagramClone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "InstagramClone/InstagramClone-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -436,12 +460,14 @@
 			baseConfigurationReference = 9F77157ADF59453E4CF49467 /* Pods-InstagramClone.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = KB93Y7F453;
 				INFOPLIST_FILE = InstagramClone/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MACH_O_TYPE = mh_execute;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Othman.InstagramClone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "InstagramClone/InstagramClone-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
