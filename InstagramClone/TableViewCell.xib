@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="postCell" rowHeight="377" id="KGk-i7-Jjw" customClass="TableViewCell" customModule="InstagramClone" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="377"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="376.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nq0-un-zPH">
+                        <rect key="frame" x="74" y="7" width="227" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="Wqh-sL-IjE"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gallery-icon" translatesAutoresizingMaskIntoConstraints="NO" id="4QQ-2Y-Gx0">
+                        <rect key="frame" x="8" y="54" width="304" height="278"/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gallery-icon" translatesAutoresizingMaskIntoConstraints="NO" id="fo1-5e-Del">
+                        <rect key="frame" x="8" y="7" width="58" height="44"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="58" id="S6N-la-1hN"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Caption" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Lg-Zs-eoi">
+                        <rect key="frame" x="8" y="340" width="304" height="37"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="4QQ-2Y-Gx0" secondAttribute="trailing" constant="8" id="0Nf-2c-XVN"/>
+                    <constraint firstItem="fo1-5e-Del" firstAttribute="top" secondItem="nq0-un-zPH" secondAttribute="top" id="6O1-5Z-Rzq"/>
+                    <constraint firstAttribute="trailing" secondItem="nq0-un-zPH" secondAttribute="trailing" constant="19" id="IQ6-8i-cNA"/>
+                    <constraint firstAttribute="bottom" secondItem="4QQ-2Y-Gx0" secondAttribute="bottom" constant="45" id="Int-Ld-VKF"/>
+                    <constraint firstItem="fo1-5e-Del" firstAttribute="leading" secondItem="4QQ-2Y-Gx0" secondAttribute="leading" id="Pkq-x5-k93"/>
+                    <constraint firstItem="8Lg-Zs-eoi" firstAttribute="top" secondItem="4QQ-2Y-Gx0" secondAttribute="bottom" constant="8" symbolic="YES" id="QjD-tV-moY"/>
+                    <constraint firstItem="4QQ-2Y-Gx0" firstAttribute="top" secondItem="nq0-un-zPH" secondAttribute="bottom" constant="26" id="Rth-NS-sjS"/>
+                    <constraint firstItem="8Lg-Zs-eoi" firstAttribute="leading" secondItem="4QQ-2Y-Gx0" secondAttribute="leading" id="SaQ-xx-Bki"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="8Lg-Zs-eoi" secondAttribute="bottom" constant="-8.5" id="UpH-zk-vF0"/>
+                    <constraint firstItem="nq0-un-zPH" firstAttribute="leading" secondItem="fo1-5e-Del" secondAttribute="trailing" constant="8" symbolic="YES" id="VGH-qV-y0E"/>
+                    <constraint firstItem="4QQ-2Y-Gx0" firstAttribute="top" secondItem="fo1-5e-Del" secondAttribute="bottom" constant="3" id="aLR-1t-riG"/>
+                    <constraint firstItem="nq0-un-zPH" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="7" id="f8s-oW-tag"/>
+                    <constraint firstItem="4QQ-2Y-Gx0" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="q7a-Re-0Xs"/>
+                    <constraint firstItem="8Lg-Zs-eoi" firstAttribute="trailing" secondItem="4QQ-2Y-Gx0" secondAttribute="trailing" id="zRm-74-Di2"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="captionLabel2" destination="8Lg-Zs-eoi" id="sQB-sq-PG1"/>
+                <outlet property="nameLabel2" destination="nq0-un-zPH" id="RRU-4I-Jf4"/>
+                <outlet property="postContainer2" destination="4QQ-2Y-Gx0" id="5RB-Da-sq2"/>
+                <outlet property="ppContainer2" destination="fo1-5e-Del" id="pue-Xy-uzS"/>
+            </connections>
+            <point key="canvasLocation" x="-1" y="34.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="gallery-icon" width="256" height="256"/>
+    </resources>
+</document>

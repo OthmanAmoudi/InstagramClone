@@ -104,9 +104,7 @@ extension SignUpViewController: UIImagePickerControllerDelegate, UINavigationCon
         if let image = info["UIImagePickerControllerOriginalImage"] as? UIImage{
             profilePictureContainer.image = image
             selectedProfilePicture = image
-            
         }
-        
         print(info)
         //  profilePictureContainer.image = infoPhoto
         dismiss(animated: true, completion: nil)

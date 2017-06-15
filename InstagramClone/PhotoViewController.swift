@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 import FirebaseStorage
 import FirebaseDatabase
 class PhotoViewController: UIViewController {
@@ -58,12 +59,24 @@ class PhotoViewController: UIViewController {
     }
     
     func sendDataToDatabase(postUrl:String){
-        
+     //   let userid =
         let ref = FIRDatabase.database().reference()
         let postReference = ref.child("posts")
         let newPostId = postReference.childByAutoId().key
         let newPostReference = postReference.child(newPostId)
-        newPostReference.setValue(["photoURL": postUrl,"caption":textCaption.text!], withCompletionBlock: {
+        //let user : FIRUser?
+        //guard let validUserID = user?.uid else { return }
+        let userID: String = FIRAuth.auth()!.currentUser!.uid
+      //  self.dbRef.child("users").updateChildValues([validUserID:userDictionary])
+     /*   if FIRAuth().currentUser != nil {
+            // User is signed in.
+            // ...
+        } else {
+            // No user is signed in.
+            // ...
+        }
+       */
+        newPostReference.setValue(["photoURL": postUrl,"caption":textCaption.text!,"userId": userID,"postId": newPostId], withCompletionBlock: {
             (error, ref) in
             if error != nil {
                 ProgressHUD.showError(error!.localizedDescription)

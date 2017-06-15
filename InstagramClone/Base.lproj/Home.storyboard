@@ -20,7 +20,30 @@
                     <view key="view" contentMode="scaleToFill" id="zAp-5i-MOq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="black" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="415" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="d3i-n3-pEM">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="postCell" rowHeight="415" id="7u5-sG-ClX">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="415"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7u5-sG-ClX" id="Q9C-ZT-xxW">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="414.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="d3i-n3-pEM" secondAttribute="trailing" id="STe-tw-16X"/>
+                            <constraint firstItem="d3i-n3-pEM" firstAttribute="top" secondItem="zAp-5i-MOq" secondAttribute="top" id="kNs-Qu-jXy"/>
+                            <constraint firstItem="d3i-n3-pEM" firstAttribute="leading" secondItem="zAp-5i-MOq" secondAttribute="leading" id="kge-XP-T4K"/>
+                            <constraint firstAttribute="bottom" secondItem="d3i-n3-pEM" secondAttribute="bottom" id="pkP-hb-IGQ"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="qGP-mn-WCL">
                         <barButtonItem key="leftBarButtonItem" title="Logout" id="fyl-Vl-KhZ">
@@ -38,11 +61,12 @@
                     </navigationItem>
                     <connections>
                         <outlet property="logoutBtn" destination="fyl-Vl-KhZ" id="PFZ-PG-pvG"/>
+                        <outlet property="tableView" destination="d3i-n3-pEM" id="YcI-YK-Dxk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ekx-FX-wkx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3288.8000000000002" y="-566.26686656671666"/>
+            <point key="canvasLocation" x="4340" y="-846.02698650674665"/>
         </scene>
         <!--Home-->
         <scene sceneID="7cV-cg-sJF">
