@@ -17,10 +17,15 @@ class ProfileViewController: UIViewController,UICollectionViewDataSource,UIColle
     @IBOutlet weak var profilePicture: UIImageView!
     
     @IBOutlet weak var MyCollectionView: UICollectionView!
-    
+   
+    var photoThumbnail: UIImage!
+    var photoThumbnail3 = UIImage()
+    var photoThumbnail2 = UIImageView()
+
     var currUser = [Users]()
     var currPosts = [Posts]()
     var currentUserPic = [String]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -75,7 +80,7 @@ class ProfileViewController: UIViewController,UICollectionViewDataSource,UIColle
                         let myusers = Users(userIdString: userID, userNameString: name, userEmailString: useremail!, userProfilePicString: profilepic)
                         self.currUser.append(myusers)
                         self.navigationItem.title=name
-                        self.profilePicture.downloadImage2(from: profilepic) 
+                        self.profilePicture.downloadImage2(from: profilepic)
 //                        print("@@@")
 //                        print(userID)
 //                        print(name)
@@ -91,18 +96,31 @@ class ProfileViewController: UIViewController,UICollectionViewDataSource,UIColle
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
+  
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return currPosts.count;
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collection_cell", for: indexPath) as! ProfileCollectionViewCell
         cell.imageCollection.downloadImage2(from: currPosts[indexPath.row].photoUrl)
+        cell.imageCollection.image = photoThumbnail
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as! ProfileCollectionViewCell
+        photoThumbnail = cell.imageCollection.image
+        performSegue(withIdentifier: "photoViewSegue", sender: nil)
+    }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        var destViewController : EnlargePhotoViewController = segue.destination as! EnlargePhotoViewController
+        destViewController.labelText = "DDDDD"
+        destViewController.myImage = photoThumbnail
+    }
+ 
 }
 
 extension UIImageView {

@@ -9,6 +9,8 @@
 import UIKit
 
 class ProfileCollectionViewCell: UICollectionViewCell {
+//    var photoThumbnail = UIImage()
+//    var photo: UIImage!
     @IBOutlet weak var imageCollection: UIImageView!
     
 }

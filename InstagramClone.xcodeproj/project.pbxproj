@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		49046CD61EF355B400806EB4 /* EnlargePhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49046CD51EF355B400806EB4 /* EnlargePhotoViewController.swift */; };
 		490E152F1EE843D20026AC2A /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490E152E1EE843D20026AC2A /* Users.swift */; };
 		49575AC81EA74B6100BD0C0C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49575AC71EA74B6100BD0C0C /* AppDelegate.swift */; };
 		49575ACD1EA74B6100BD0C0C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49575ACB1EA74B6100BD0C0C /* Main.storyboard */; };
@@ -38,6 +39,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		49046CD51EF355B400806EB4 /* EnlargePhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnlargePhotoViewController.swift; sourceTree = "<group>"; };
 		490E152E1EE843D20026AC2A /* Users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		49575AC41EA74B6100BD0C0C /* InstagramClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstagramClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49575AC71EA74B6100BD0C0C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -129,8 +131,9 @@
 				490E152E1EE843D20026AC2A /* Users.swift */,
 				497DE00F1ED2359500A0B1B6 /* TableViewCell.swift */,
 				497DE0121ED37C7500A0B1B6 /* TableViewCell.xib */,
-				49D2B6C71EA7D10100541569 /* Profile.storyboard */,
 				497E42AF1EF1CAFA00257BF3 /* ProfileCollectionViewCell.swift */,
+				49D2B6C71EA7D10100541569 /* Profile.storyboard */,
+				49046CD51EF355B400806EB4 /* EnlargePhotoViewController.swift */,
 				49575AE31EA7611A00BD0C0C /* ProfileViewController.swift */,
 				49D2B6C51EA7D0B900541569 /* Activity.storyboard */,
 				49575ADF1EA7610300BD0C0C /* ActivityViewController.swift */,
@@ -296,6 +299,7 @@
 				49575ADE1EA760F200BD0C0C /* SearchViewController.swift in Sources */,
 				49575AE01EA7610300BD0C0C /* ActivityViewController.swift in Sources */,
 				49575AC81EA74B6100BD0C0C /* AppDelegate.swift in Sources */,
+				49046CD61EF355B400806EB4 /* EnlargePhotoViewController.swift in Sources */,
 				497E42B01EF1CAFA00257BF3 /* ProfileCollectionViewCell.swift in Sources */,
 				49896C681EB0A24F00DC7950 /* Config.swift in Sources */,
 				4961CFA01EE71D0800D9AAA9 /* Posts.swift in Sources */,

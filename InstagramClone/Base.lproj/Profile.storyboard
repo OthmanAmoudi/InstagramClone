@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="bDk-Mq-nh2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="21O-ZH-ttg">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -63,13 +63,13 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="59r-zg-vbn">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="59r-zg-vbn">
                                         <rect key="frame" x="74.5" y="0.0" width="36" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kWe-c4-B85">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kWe-c4-B85">
                                         <rect key="frame" x="149.5" y="0.0" width="35.5" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <nil key="textColor"/>
@@ -77,7 +77,7 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="HSO-ni-fQf">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" indicatorStyle="black" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="HSO-ni-fQf">
                                 <rect key="frame" x="0.0" y="250" width="375" height="417"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="KGH-w9-iHu">
@@ -148,11 +148,57 @@
                         <outlet property="followingNum" destination="kWe-c4-B85" id="GeE-1b-dM5"/>
                         <outlet property="postsNum" destination="lrZ-k2-vsU" id="1Bi-dw-hP7"/>
                         <outlet property="profilePicture" destination="TNy-qP-imb" id="cEI-fF-17H"/>
+                        <segue destination="aHN-EO-g0q" kind="show" identifier="photoViewSegue" id="zhN-hg-Ehu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0A8-hx-LIc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2.3999999999999999" y="685.90704647676171"/>
+        </scene>
+        <!--Enlarge Photo View Controller-->
+        <scene sceneID="lC5-cn-Vb8">
+            <objects>
+                <viewController storyboardIdentifier="EnlargePhotoViewController" id="aHN-EO-g0q" customClass="EnlargePhotoViewController" customModule="InstagramClone" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pgL-Vp-ZW1"/>
+                        <viewControllerLayoutGuide type="bottom" id="QYW-S0-vx3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="D70-PJ-QXH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PHA-7N-tXU">
+                                <rect key="frame" x="16" y="118" width="343" height="373"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vf0-fH-31A">
+                                <rect key="frame" x="166" y="72" width="87" height="38"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="87" id="G2Y-1q-tBL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="PHA-7N-tXU" firstAttribute="top" secondItem="vf0-fH-31A" secondAttribute="bottom" constant="8" symbolic="YES" id="4JY-pf-OaQ"/>
+                            <constraint firstItem="QYW-S0-vx3" firstAttribute="top" secondItem="PHA-7N-tXU" secondAttribute="bottom" constant="127" id="JjY-pI-q2m"/>
+                            <constraint firstAttribute="trailing" secondItem="PHA-7N-tXU" secondAttribute="trailing" constant="16" id="XyQ-c1-xD2"/>
+                            <constraint firstItem="PHA-7N-tXU" firstAttribute="leading" secondItem="D70-PJ-QXH" secondAttribute="leading" constant="16" id="hfG-1V-jM5"/>
+                            <constraint firstItem="vf0-fH-31A" firstAttribute="leading" secondItem="D70-PJ-QXH" secondAttribute="leading" constant="166" id="sbj-t2-Qrz"/>
+                            <constraint firstItem="vf0-fH-31A" firstAttribute="top" secondItem="pgL-Vp-ZW1" secondAttribute="bottom" constant="8" symbolic="YES" id="u37-IS-XZu"/>
+                            <constraint firstItem="PHA-7N-tXU" firstAttribute="top" secondItem="pgL-Vp-ZW1" secondAttribute="bottom" constant="54" id="wlU-fL-fa0"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="enlargedPhoto" destination="PHA-7N-tXU" id="pAy-q2-6tj"/>
+                        <outlet property="myLabel" destination="vf0-fH-31A" id="jgK-4W-2WF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ovp-wl-iYX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1000.8" y="685.90704647676171"/>
         </scene>
         <!--Profile-->
         <scene sceneID="CL4-Ko-mkU">
